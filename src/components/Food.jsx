@@ -1,4 +1,4 @@
-const Food = () => {
+export default function Food() {
   const food1 = `Orange`;
   const food2 = `Banana`;
 
@@ -9,6 +9,4 @@ const Food = () => {
       <li>{food2.toUpperCase()}</li>
     </ul>
   );
-};
-
-export default Food;
+}

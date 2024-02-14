@@ -1,4 +1,4 @@
-function Header() {
+export default function Header() {
   return (
     <header>
       <h1>My website</h1>
@@ -22,5 +22,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;
