@@ -1,3 +1,4 @@
+import ProfilePicture from "./components/ProfilePicture";
 import UserGreeting from "./components/UserGreeting";
 import Student from "./components/Student";
 import Footer from "./components/Footer";
@@ -27,12 +28,9 @@ function App() {
   return (
     <>
       <Header />
+      <ProfilePicture />
       <Card />
-      {fruits.length > 0 && <List items={fruits} category={"Fruits"} />}
-      {vegetables.length > 0 && (
-        <List items={vegetables} category={"Vegetables"} />
-      )}
-
+      <Button />
       <Footer />
     </>
   );
@@ -41,8 +39,14 @@ function App() {
 export default App;
 
 {
+  /* {fruits.length > 0 && <List items={fruits} category={"Fruits"} />}
+{vegetables.length > 0 && (
+  <List items={vegetables} category={"Vegetables"} />
+)} */
+}
+
+{
   /* <Food />
-<Button />
 <Student name="Spongebob" age={30} isStudent={true} />
       <Student name="Patrick" age={42} isStudent={false} />
       <Student name="Squidward" age={50} isStudent={false} />

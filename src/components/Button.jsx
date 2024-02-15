@@ -8,5 +8,24 @@ export default function Button() {
   //   cursor: "pointer",
   // };
 
-  return <button className="button">Click Me</button>;
+  // let count = 0;
+
+  // const handleClick = (name) => {
+  //   if (count < 3) {
+  //     count++;
+  //     console.log(`${name} clicked me ${count} times!`);
+  //   } else {
+  //     console.log(`${name} stop clicking me!`);
+  //   }
+  // };
+
+  const handleClick = (e) => {
+    e.target.textContent = `Ouch!`;
+  };
+
+  return (
+    <button className="button" onClick={(e) => handleClick(e)}>
+      Click Me
+    </button>
+  );
 }
