@@ -1,4 +1,3 @@
-import ProfilePicture from "./components/ProfilePicture";
 import UserGreeting from "./components/UserGreeting";
 import Student from "./components/Student";
 import Footer from "./components/Footer";
@@ -9,6 +8,8 @@ import Card from "./components/Card";
 import List from "./components/List";
 
 function App() {
+  const profilePicUrl = "./src/assets/fox.jpg";
+
   const fruits = [
     { id: 1, name: "apple", calories: 95 },
     { id: 2, name: "orange", calories: 45 },
@@ -28,8 +29,17 @@ function App() {
   return (
     <>
       <Header />
-      <ProfilePicture />
-      <Card />
+      <Card
+        imageUrl={profilePicUrl}
+        name="Monkey Man"
+        occupation="Professional Air Waster"
+      />
+      <Card name="Banana Abuser" occupation="Banana Flinger" />
+      <Card
+        imageUrl={profilePicUrl}
+        name="Malphite Rock Solid"
+        occupation="Self Yeeter"
+      />
       <Button />
       <Footer />
     </>

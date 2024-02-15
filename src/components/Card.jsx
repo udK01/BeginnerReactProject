@@ -1,13 +1,22 @@
-export default function Card() {
+import ProfilePicture from "./ProfilePicture";
+import PropTypes from "prop-types";
+
+export default function Card(props) {
   return (
     <div className="card">
-      <img
-        className="card-image"
-        src="https://via.placeholder.com/150"
-        alt="profile picture"
-      ></img>
-      <h2 className="card-title">Monkey Man</h2>
-      <p className="card-text">Professional Time/Air Waster</p>
+      <ProfilePicture className="card-image" imageUrl={props.imageUrl} />
+      <h2 className="card-title">{props.name}</h2>
+      <p className="card-text">{props.occupation}</p>
     </div>
   );
 }
+Card.propTypes = {
+  imageUrl: PropTypes.string,
+  name: PropTypes.string,
+  occupation: PropTypes.string,
+};
+Card.defaultProps = {
+  imageUrl: "./src/assets/react.svg",
+  name: "Guest",
+  occupation: "NPC",
+};
