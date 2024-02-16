@@ -1,9 +1,10 @@
 import UserGreeting from "./components/UserGreeting";
 import MyComponent from "./components/MyComponent";
+import ColorPicker from "./components/ColorPicker";
 import Student from "./components/Student";
 import Counter from "./components/Counter";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Button from "./components/Button";
 import Food from "./components/Food";
 import Card from "./components/Card";
@@ -45,8 +46,7 @@ function App() {
         occupation="Self Yeeter"
       />
       {/* End Cards */}
-      <MyComponent />
-      {/* <Counter /> */}
+      <ColorPicker />
       <Footer />
     </>
   );
@@ -70,6 +70,8 @@ export default App;
       <Student name="Larry" /> 
 <UserGreeting isLoggedIn={true} username="Business Monkey" />
       <MyComponent />
-            <Button />
+      <Button />
+      <MyComponent />
+      <Counter />
       */
 }
