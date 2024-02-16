@@ -1,5 +1,7 @@
 import UserGreeting from "./components/UserGreeting";
+import MyComponent from "./components/MyComponent";
 import Student from "./components/Student";
+import Counter from "./components/Counter";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Button from "./components/Button";
@@ -29,6 +31,8 @@ function App() {
   return (
     <>
       <Header />
+
+      {/* Cards */}
       <Card
         imageUrl={profilePicUrl}
         name="Monkey Man"
@@ -40,7 +44,8 @@ function App() {
         name="Malphite Rock Solid"
         occupation="Self Yeeter"
       />
-      <Button />
+      {/* End Cards */}
+      <Counter />
       <Footer />
     </>
   );
@@ -62,5 +67,8 @@ export default App;
       <Student name="Squidward" age={50} isStudent={false} />
       <Student name="Sandy" age={27} isStudent={true} />
       <Student name="Larry" /> 
-<UserGreeting isLoggedIn={true} username="Business Monkey" />*/
+<UserGreeting isLoggedIn={true} username="Business Monkey" />
+      <MyComponent />
+            <Button />
+      */
 }

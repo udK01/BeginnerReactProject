@@ -1,4 +1,6 @@
-export default function Button() {
+import PropTypes from "prop-types";
+
+export default function Button(props) {
   // const styles = {
   //   backgroundColor: "hsl(200, 100%, 50%)",
   //   color: "white",
@@ -19,13 +21,25 @@ export default function Button() {
   //   }
   // };
 
-  const handleClick = (e) => {
-    e.target.textContent = `Ouch!`;
-  };
+  // const handleClick = (e) => {
+  //   e.target.textContent = `Ouch!`;
+  // };
 
   return (
-    <button className="button" onClick={(e) => handleClick(e)}>
-      Click Me
+    <button className={props.className} onClick={(e) => props.function(e)}>
+      {props.btnText}
     </button>
   );
 }
+Button.propTypes = {
+  btnText: PropTypes.string,
+  className: PropTypes.string,
+  function: PropTypes.func,
+};
+Button.defaultProps = {
+  btnText: "Click Me.",
+  className: "button",
+  function: () => {
+    console.log("Default function executed.");
+  },
+};
