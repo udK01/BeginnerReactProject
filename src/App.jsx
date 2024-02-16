@@ -45,7 +45,8 @@ function App() {
         occupation="Self Yeeter"
       />
       {/* End Cards */}
-      <Counter />
+      <MyComponent />
+      {/* <Counter /> */}
       <Footer />
     </>
   );
