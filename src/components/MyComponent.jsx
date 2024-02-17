@@ -1,32 +1,32 @@
+import Button from "./Button";
 import { useState } from "react";
 
 export default function MyComponent() {
-  const [car, setCar] = useState({ year: 1993, make: "Honda", model: "Civic" });
+  const [foods, setFoods] = useState(["Apple", "Orange", "Banana"]);
 
-  function handleYearChange(e) {
-    setCar((prevCar) => ({ ...prevCar, year: e.target.value }));
+  function handleAddFood() {
+    const newFood = document.getElementById("foodInput").value;
+    document.getElementById("foodInput").value = "";
+
+    setFoods((prevFoods) => [...prevFoods, newFood]);
   }
 
-  function handleMakeChange(e) {
-    setCar((prevCar) => ({ ...prevCar, make: e.target.value }));
-  }
-
-  function handleModelChange(e) {
-    setCar((prevCar) => ({ ...prevCar, model: e.target.value }));
+  function handleRemoveFood(index) {
+    setFoods(foods.filter((_, i) => i !== index));
   }
 
   return (
     <div>
-      <p>
-        Your favourite car is: {car.year} {car.make} {car.model}
-        <br />
-        <input type="number" value={car.year} onChange={handleYearChange} />
-        <br />
-        <input type="text" value={car.make} onChange={handleMakeChange} />
-        <br />
-        <input type="text" value={car.model} onChange={handleModelChange} />
-        <br />
-      </p>
+      <h2>List of Food</h2>
+      <ul>
+        {foods.map((food, index) => (
+          <li key={index} onClick={() => handleRemoveFood(index)}>
+            {food}
+          </li>
+        ))}
+        <input type="text" id="foodInput" placeholder="Enter food name" />
+        <Button btnText={"Add Food"} function={handleAddFood} />
+      </ul>
     </div>
   );
 }
@@ -59,6 +59,7 @@ export default function MyComponent() {
 // <p>Is Employed: {isEmployed ? "Yes" : "No"}</p>
 // <button onClick={toggleEmployedStatus}>Toggle Status</button>
 // </div>
+
 /////////////////////////////////////////////////////////////////////////
 
 // Example 2.
@@ -136,5 +137,36 @@ export default function MyComponent() {
 /////////////////////////////////////////////////////////////////////////
 
 // Example 3.
+
+// const [car, setCar] = useState({ year: 1993, make: "Honda", model: "Civic" });
+
+// function handleYearChange(e) {
+//   setCar((prevCar) => ({ ...prevCar, year: e.target.value }));
+// }
+
+// function handleMakeChange(e) {
+//   setCar((prevCar) => ({ ...prevCar, make: e.target.value }));
+// }
+
+// function handleModelChange(e) {
+//   setCar((prevCar) => ({ ...prevCar, model: e.target.value }));
+// }
+
+// <div>
+// <p>
+//   Your favourite car is: {car.year} {car.make} {car.model}
+//   <br />
+//   <input type="number" value={car.year} onChange={handleYearChange} />
+//   <br />
+//   <input type="text" value={car.make} onChange={handleMakeChange} />
+//   <br />
+//   <input type="text" value={car.model} onChange={handleModelChange} />
+//   <br />
+// </p>
+// </div>
+
+/////////////////////////////////////////////////////////////////////////
+
+// Example 4.
 
 /////////////////////////////////////////////////////////////////////////
