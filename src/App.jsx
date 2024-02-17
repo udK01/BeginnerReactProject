@@ -46,7 +46,7 @@ function App() {
         occupation="Self Yeeter"
       />
       {/* End Cards */}
-      <ColorPicker />
+      <Counter />
       <Footer />
     </>
   );
@@ -72,6 +72,7 @@ export default App;
       <MyComponent />
       <Button />
       <MyComponent />
-      <Counter />
+      
+      <ColorPicker />
       */
 }
