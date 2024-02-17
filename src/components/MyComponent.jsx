@@ -2,31 +2,66 @@ import Button from "./Button";
 import { useState } from "react";
 
 export default function MyComponent() {
-  const [foods, setFoods] = useState(["Apple", "Orange", "Banana"]);
+  const [cars, setCars] = useState([]);
+  const [carYear, setCarYear] = useState(new Date().getFullYear());
+  const [carMake, setCarMake] = useState("");
+  const [carModel, setCarModel] = useState("");
 
-  function handleAddFood() {
-    const newFood = document.getElementById("foodInput").value;
-    document.getElementById("foodInput").value = "";
+  function handleAddCar() {
+    const newCar = { year: carYear, make: carMake, model: carModel };
+    setCars((prevCars) => [...prevCars, newCar]);
 
-    setFoods((prevFoods) => [...prevFoods, newFood]);
+    setCarYear(new Date().getFullYear());
+    setCarMake("");
+    setCarModel("");
   }
 
-  function handleRemoveFood(index) {
-    setFoods(foods.filter((_, i) => i !== index));
+  function handleRemoveCar(index) {
+    setCars((prevCars) => prevCars.filter((_, i) => i !== index));
+  }
+
+  function handleYearChange(e) {
+    setCarYear(e.target.value);
+  }
+
+  function handleMakeChange(e) {
+    setCarMake(e.target.value);
+  }
+
+  function handleModelChange(e) {
+    setCarModel(e.target.value);
   }
 
   return (
     <div>
-      <h2>List of Food</h2>
+      <h2>List of Car Objects:</h2>
       <ul>
-        {foods.map((food, index) => (
-          <li key={index} onClick={() => handleRemoveFood(index)}>
-            {food}
+        {cars.map((car, index) => (
+          <li key={index} onClick={() => handleRemoveCar(index)}>
+            {car.year} {car.make} {car.model}
           </li>
         ))}
-        <input type="text" id="foodInput" placeholder="Enter food name" />
-        <Button btnText={"Add Food"} function={handleAddFood} />
       </ul>
+      <br />
+      <input
+        type="number"
+        value={carYear}
+        onChange={(e) => handleYearChange(e)}
+      />
+      <br />
+      <input
+        type="text"
+        value={carMake}
+        onChange={(e) => handleMakeChange(e)}
+      />
+      <br />
+      <input
+        type="text"
+        value={carModel}
+        onChange={(e) => handleModelChange(e)}
+      />
+      <br />
+      <Button btnText={"Add Car"} function={handleAddCar} />
     </div>
   );
 }
@@ -168,5 +203,37 @@ export default function MyComponent() {
 /////////////////////////////////////////////////////////////////////////
 
 // Example 4.
+
+// import Button from "./Button";
+
+// const [foods, setFoods] = useState(["Apple", "Orange", "Banana"]);
+
+// function handleAddFood() {
+//   const newFood = document.getElementById("foodInput").value;
+//   document.getElementById("foodInput").value = "";
+
+//   setFoods((prevFoods) => [...prevFoods, newFood]);
+// }
+
+// function handleRemoveFood(index) {
+//   setFoods(foods.filter((_, i) => i !== index));
+// }
+
+// <div>
+// <h2>List of Food</h2>
+// <ul>
+//   {foods.map((food, index) => (
+//     <li key={index} onClick={() => handleRemoveFood(index)}>
+//       {food}
+//     </li>
+//   ))}
+//   <input type="text" id="foodInput" placeholder="Enter food name" />
+//   <Button btnText={"Add Food"} function={handleAddFood} />
+// </ul>
+// </div>
+
+/////////////////////////////////////////////////////////////////////////
+
+// Example 5.
 
 /////////////////////////////////////////////////////////////////////////
