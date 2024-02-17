@@ -1,6 +1,7 @@
 import UserGreeting from "./components/UserGreeting";
 import MyComponent from "./components/MyComponent";
 import ColorPicker from "./components/ColorPicker";
+import ToDoList from "./components/ToDoList";
 import Student from "./components/Student";
 import Counter from "./components/Counter";
 import Header from "./components/Header";
@@ -46,7 +47,7 @@ function App() {
         occupation="Self Yeeter"
       />
       {/* End Cards */}
-      <MyComponent />
+      <ToDoList />
       <Footer />
     </>
   );
