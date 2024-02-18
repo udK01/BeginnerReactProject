@@ -35,7 +35,7 @@ function App() {
       <Header />
 
       {/* Cards */}
-      <Card
+      {/* <Card
         imageUrl={profilePicUrl}
         name="Monkey Man"
         occupation="Professional Air Waster"
@@ -45,7 +45,7 @@ function App() {
         imageUrl={profilePicUrl}
         name="Malphite Rock Solid"
         occupation="Self Yeeter"
-      />
+      /> */}
       {/* End Cards */}
       <ToDoList />
       <Footer />
