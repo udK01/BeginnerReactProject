@@ -1,3 +1,4 @@
+import ComponentA from "./components/useContextExample/ComponentA";
 import UserGreeting from "./components/UserGreeting";
 import DigitalClock from "./components/DigitalClock";
 import MyComponent from "./components/MyComponent";
@@ -12,7 +13,7 @@ import Food from "./components/Food";
 import Card from "./components/Card";
 import List from "./components/List";
 
-function App() {
+export default function App() {
   const profilePicUrl = "./src/assets/fox.jpg";
 
   const fruits = [
@@ -48,13 +49,12 @@ function App() {
         occupation="Self Yeeter"
       /> */}
       {/* End Cards */}
-      <DigitalClock />
+      <ComponentA />
+
       <Footer />
     </>
   );
 }
-
-export default App;
 
 {
   /* {fruits.length > 0 && <List items={fruits} category={"Fruits"} />}
@@ -75,6 +75,7 @@ export default App;
       <Button />
       <ToDoList />
       <Counter />
+      <DigitalClock />
       <ColorPicker />
       */
 }
