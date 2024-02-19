@@ -47,7 +47,7 @@ function App() {
         occupation="Self Yeeter"
       /> */}
       {/* End Cards */}
-      <ToDoList />
+      <MyComponent />
       <Footer />
     </>
   );
@@ -72,7 +72,7 @@ export default App;
 <UserGreeting isLoggedIn={true} username="Business Monkey" />
       <MyComponent />
       <Button />
-      <MyComponent />
+      <ToDoList />
       <Counter />
       <ColorPicker />
       */

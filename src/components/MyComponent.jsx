@@ -1,68 +1,33 @@
-import Button from "./Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function MyComponent() {
-  const [cars, setCars] = useState([]);
-  const [carYear, setCarYear] = useState(new Date().getFullYear());
-  const [carMake, setCarMake] = useState("");
-  const [carModel, setCarModel] = useState("");
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
 
-  function handleAddCar() {
-    const newCar = { year: carYear, make: carMake, model: carModel };
-    setCars((prevCars) => [...prevCars, newCar]);
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    console.log("EVENT LISTENER ADDED");
 
-    setCarYear(new Date().getFullYear());
-    setCarMake("");
-    setCarModel("");
-  }
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      console.log("EVENT LISTENER REMOVED");
+    };
+  }, []);
 
-  function handleRemoveCar(index) {
-    setCars((prevCars) => prevCars.filter((_, i) => i !== index));
-  }
+  useEffect(() => {
+    document.title = `Size: ${width} x ${height}`;
+  }, [width, height]);
 
-  function handleYearChange(e) {
-    setCarYear(e.target.value);
-  }
-
-  function handleMakeChange(e) {
-    setCarMake(e.target.value);
-  }
-
-  function handleModelChange(e) {
-    setCarModel(e.target.value);
+  function handleResize() {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
   }
 
   return (
-    <div>
-      <h2>List of Car Objects:</h2>
-      <ul>
-        {cars.map((car, index) => (
-          <li key={index} onClick={() => handleRemoveCar(index)}>
-            {car.year} {car.make} {car.model}
-          </li>
-        ))}
-      </ul>
-      <br />
-      <input
-        type="number"
-        value={carYear}
-        onChange={(e) => handleYearChange(e)}
-      />
-      <br />
-      <input
-        type="text"
-        value={carMake}
-        onChange={(e) => handleMakeChange(e)}
-      />
-      <br />
-      <input
-        type="text"
-        value={carModel}
-        onChange={(e) => handleModelChange(e)}
-      />
-      <br />
-      <Button btnText={"Add Car"} function={handleAddCar} />
-    </div>
+    <>
+      <p>Window Width {width}px</p>
+      <p>Window Height {height}px</p>
+    </>
   );
 }
 
@@ -235,5 +200,91 @@ export default function MyComponent() {
 /////////////////////////////////////////////////////////////////////////
 
 // Example 5.
+
+// import Button from "./Button";
+
+// const [cars, setCars] = useState([]);
+// const [carYear, setCarYear] = useState(new Date().getFullYear());
+// const [carMake, setCarMake] = useState("");
+// const [carModel, setCarModel] = useState("");
+
+// function handleAddCar() {
+//   const newCar = { year: carYear, make: carMake, model: carModel };
+//   setCars((prevCars) => [...prevCars, newCar]);
+
+//   setCarYear(new Date().getFullYear());
+//   setCarMake("");
+//   setCarModel("");
+// }
+
+// function handleRemoveCar(index) {
+//   setCars((prevCars) => prevCars.filter((_, i) => i !== index));
+// }
+
+// function handleYearChange(e) {
+//   setCarYear(e.target.value);
+// }
+
+// function handleMakeChange(e) {
+//   setCarMake(e.target.value);
+// }
+
+// function handleModelChange(e) {
+//   setCarModel(e.target.value);
+// }
+
+// <div>
+//   <h2>List of Car Objects:</h2>
+//   <ul>
+//     {cars.map((car, index) => (
+//       <li key={index} onClick={() => handleRemoveCar(index)}>
+//         {car.year} {car.make} {car.model}
+//       </li>
+//     ))}
+//   </ul>
+//   <br />
+//   <input type="number" value={carYear} onChange={(e) => handleYearChange(e)} />
+//   <br />
+//   <input type="text" value={carMake} onChange={(e) => handleMakeChange(e)} />
+//   <br />
+//   <input type="text" value={carModel} onChange={(e) => handleModelChange(e)} />
+//   <br />
+//   <Button btnText={"Add Car"} function={handleAddCar} />
+// </div>;
+
+/////////////////////////////////////////////////////////////////////////
+
+// Example 6.
+
+// import Button from "./Button";
+
+// const [count, setCount] = useState(0);
+// const [color, setColor] = useState("green");
+
+// useEffect(() => {
+//   document.title = `Count ${count} ${color}`;
+// }, [count, color]);
+
+// function addCount() {
+//   setCount((prevCount) => prevCount + 1);
+// }
+
+// function subtractCount() {
+//   setCount((prevCount) => prevCount - 1);
+// }
+
+// function changeColor() {
+//   setColor((prevColor) => (prevColor === "green" ? "red" : "green"));
+// }
+
+// <p style={{ color: color }}>Count: {count}</p>
+// <Button btnText={"Add"} function={addCount} />
+// <Button btnText={"Subtract"} function={subtractCount} />
+// <br />
+// <Button btnText={"Change Color"} function={changeColor} />
+
+/////////////////////////////////////////////////////////////////////////
+
+// Example 7.
 
 /////////////////////////////////////////////////////////////////////////
