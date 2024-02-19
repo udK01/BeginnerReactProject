@@ -246,3 +246,16 @@
   font-size: 1.4rem;
   margin-left: 10px;
 }
+
+.clock-container {
+  padding: 10px 0;
+}
+
+.clock {
+  color: brown;
+  font-size: 6rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: monospace;
+  text-shadow: 3px 3px 5px hsl(0, 0%, 0%, 0.75);
+}

@@ -1,4 +1,5 @@
 import UserGreeting from "./components/UserGreeting";
+import DigitalClock from "./components/DigitalClock";
 import MyComponent from "./components/MyComponent";
 import ColorPicker from "./components/ColorPicker";
 import ToDoList from "./components/ToDoList";
@@ -47,7 +48,7 @@ function App() {
         occupation="Self Yeeter"
       /> */}
       {/* End Cards */}
-      <MyComponent />
+      <DigitalClock />
       <Footer />
     </>
   );
