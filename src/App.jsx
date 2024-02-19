@@ -49,7 +49,8 @@ export default function App() {
         occupation="Self Yeeter"
       /> */}
       {/* End Cards */}
-      <ComponentA />
+
+      <MyComponent />
 
       <Footer />
     </>
@@ -77,5 +78,6 @@ export default function App() {
       <Counter />
       <DigitalClock />
       <ColorPicker />
+      <ComponentA />
       */
 }
