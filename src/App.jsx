@@ -3,6 +3,7 @@ import UserGreeting from "./components/UserGreeting";
 import DigitalClock from "./components/DigitalClock";
 import MyComponent from "./components/MyComponent";
 import ColorPicker from "./components/ColorPicker";
+import Stopwatch from "./components/Stopwatch";
 import ToDoList from "./components/ToDoList";
 import Student from "./components/Student";
 import Counter from "./components/Counter";
@@ -49,9 +50,7 @@ export default function App() {
         occupation="Self Yeeter"
       /> */}
       {/* End Cards */}
-
-      <MyComponent />
-
+      <Stopwatch />
       <Footer />
     </>
   );
@@ -70,7 +69,7 @@ export default function App() {
       <Student name="Patrick" age={42} isStudent={false} />
       <Student name="Squidward" age={50} isStudent={false} />
       <Student name="Sandy" age={27} isStudent={true} />
-      <Student name="Larry" /> 
+      <Student name="Larry" />
 <UserGreeting isLoggedIn={true} username="Business Monkey" />
       <MyComponent />
       <Button />
