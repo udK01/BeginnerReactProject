@@ -4,6 +4,7 @@ import DigitalClock from "./components/DigitalClock";
 import MyComponent from "./components/MyComponent";
 import ColorPicker from "./components/ColorPicker";
 import Stopwatch from "./components/Stopwatch";
+import Draggable from "./components/Draggable";
 import ToDoList from "./components/ToDoList";
 import Student from "./components/Student";
 import Counter from "./components/Counter";
@@ -51,6 +52,7 @@ export default function App() {
       /> */}
       {/* End Cards */}
       <Stopwatch />
+      <Draggable />
       <Footer />
     </>
   );
